@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/handlebars.min.js"></script>
+    <script src="assets/js/app.js"></script>
 </head>
 
 <body>
@@ -54,9 +57,13 @@
         </form>
     </div>
 
+    <script id="shoe-template" type="text/x-handlebars-template">​
+        {{#each this}}​
+            <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​
+        {{/each}}
+        ​</script>
 
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/app.js"></script>
+
 </body>
 
 </html>

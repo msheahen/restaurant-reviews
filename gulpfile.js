@@ -35,7 +35,7 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 var myJSfiles = 'src/scripts/*.js';
-var vendorJSfiles = "src/scripts/vendor/*.js";
+var vendorJSfiles = ['src/scripts/vendor/jquery.min.js', 'src/scripts/vendor/bootstrap.min.js'];
 
 gulp.task('js', function() {
 	gulp.src(myJSfiles)
@@ -47,6 +47,13 @@ gulp.task('js', function() {
 gulp.task('vendorJs', function(){
 	gulp.src(vendorJSfiles)
 		.pipe(concat('vendor.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/assets/js'));
+});
+
+gulp.task('handlebars', function(){
+	gulp.src('src/scripts/vendor/handlebars-v4.0.5.js')
+		.pipe(concat('handlebars.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js'));
 });
@@ -105,4 +112,4 @@ gulp.task('watch', function() {
 /*
  gulp serve will get our page up and running!
  */
-gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'vendorJs', 'copy', 'templates', 'watch']);
+gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'vendorJs', 'handlebars', 'copy', 'templates', 'watch']);
