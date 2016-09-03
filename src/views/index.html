@@ -14,19 +14,49 @@
 
     <div class="jumbotron">
         <div class='container'>
-            <h2 class="page-title">Hello World!</h2>
+            <h2 class="page-title text-center" >Restaurant Reviews</h2>
         </div>
-        <ul class="nav nav-pills">
-            <li role="presentation" class="active"><a href="index.html">Home</a></li>
-            <li role="presentation"><a href="train-map.html">Leave Review</a></li>
-        </ul>
+
+        <form class="navbar-form navbar-left" >
+            <fieldset>
+            <legend>Filter By</legend>
+              <div class='form-group'>
+              <label for="cuisine-type" class="sr-only sr-only-focusable">Cuisine Type</label>
+            <select class='form-control' id="cuisine-type">
+              <option value='all'>All Cuisine</option>
+              <option value="fine">Fine Dining</option>
+              <option value="casual">Casual</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="seafood">Seafood</option>
+            </select>
+          </div>
+          <div class='form-group'>
+            <label for="maximum-price" class="sr-only sr-only-focusable">Maximum Price</label>
+            <select class='form-control' id="maximum-price">
+              <option value='all'>All Prices</option>
+              <option value="cheap">$</option>
+              <option value="normal">$$ or less</option>
+              <option value="pricey">$$$ or less</option>
+              <option value="expensive">$$$$ or less</option>
+            </select>
+          </div>
+          <div class='form-group'>
+            <label for="minimum-rating" class="sr-only sr-only-focusable">Minimum Rating</label>
+            <select class='form-control' id="minimum-rating">
+              <option value='all'><span class='glyphicon glyphicon-star'></span> +</option>
+              <option value="fiveStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></option>
+              <option value="fourStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+              <option value="threeStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+              <option value="twoStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+            </select>
+          </div>
+        </fieldset>
+        </form>
     </div>
 
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/idb.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

@@ -29,13 +29,24 @@ gulp.task('css', function() {
 		.pipe(gulp.dest('dist/assets/css'));
 });
 
-/* Yay, now let's uglify our javascript! */
+/* Yay, now let's uglify our javascript and
+concatenate our libaries into a vendor.js file!! */
 var uglify = require('gulp-uglify');
-var jsFiles = 'src/scripts/*.js';
+var concat = require('gulp-concat');
 
+var myJSfiles = 'src/scripts/*.js';
+var vendorJSfiles = "src/scripts/vendor/*.js";
 
 gulp.task('js', function() {
-	gulp.src(jsFiles)
+	gulp.src(myJSfiles)
+		.pipe(concat('app.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest('dist/assets/js'));
+});
+
+gulp.task('vendorJs', function(){
+	gulp.src(vendorJSfiles)
+		.pipe(concat('vendor.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js'));
 });
@@ -50,6 +61,23 @@ Sweet, now we need to move our html files into dist and
 gulp.task('copy', function() {
     gulp.src('src/views/*.html')
         .pipe(gulp.dest('dist/'));
+});
+
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
+var concat = require('gulp-concat');
+
+gulp.task('templates', function () {
+    return gulp.src('src/views/*.hbs')
+      .pipe(handlebars())
+      .pipe(wrap('Handlebars.template(<%= contents %>)'))
+      .pipe(declare({
+          namespace: 'MyApp.templates',
+          noRedeclare: true, // Avoid duplicate declarations
+      }))
+      .pipe(concat('templates.js'))
+      .pipe(gulp.dest('src/scripts/'));
 });
 
 /*
@@ -68,8 +96,8 @@ watch for changes in our code to we can auto-reload
 */
 gulp.task('watch', function() {
 	gulp.watch(sassFiles,['css']).on('change', browserSync.reload);
-	gulp.watch(jsFiles,['js']).on('change', browserSync.reload);
-	gulp.watch(['src/views/*.html'], ['fileinclude']).on('change', browserSync.reload);
+	gulp.watch(myJSfiles,['js']).on('change', browserSync.reload);
+	gulp.watch(['src/views/*.html'], ['copy']).on('change', browserSync.reload);
 });
 
 
@@ -77,4 +105,4 @@ gulp.task('watch', function() {
 /*
  gulp serve will get our page up and running!
  */
-gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'copy', 'watch']);
+gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'vendorJs', 'copy', 'templates', 'watch']);
