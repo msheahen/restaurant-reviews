@@ -7,16 +7,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/app.js"></script>
+
 </head>
 
 <body>
-    <script id="shoe-template" type="x-handlebars-template">​
-        {{#each this}}​
-            <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​
-        {{/each}}
-        ​</script>
+
+    <div class="jumbotron">
+        <div class='container-fluid'>
+            <h2 class="page-title text-center">Restaurant Reviews</h2>
+        </div>
+    </div>
+    <div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="review-modal-label">Add a Review</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="yourName">Your Name</label>
+                            <input type="name" class="form-control" id="yourName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputFile">File input</label>
+                            <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea">Comments</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                      </form>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+    <script id="restaurant-details" type="text/x-handlebars-template">​
+        <div class="card title-card center-block">
+            <img class="card-img-top" src="{{image}}" alt="{{image-alt}}">
+            <div class="card-block">
+                <h4 class="card-title">{{name}}</h4>
+                <p class="card-text">{{cuisine}}</p>
+                <p class='card-text'>{{rating}}</p>
+                <button id="leaveReviewButton" class='btn primary' data-toggle="modal" data-target="#review-modal">Leave a Review</div>
+        </div>
+        </div>
+    </script>
+
+
+    <script id="ratings-list" type="text/x-handlebars/template">
+      <div class='row'>
+        {{#each this}}
+            <div class='col-xs-12 col-md-6'>
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title review-title">
+                          {{printStars this.stars}}
+                        </h4>
+                        <p class="card-text">{{this.review}}</p>
+                        <p class='card-text'>{{this.name}}</p>
+                        <p class='card-text'>{{this.date}}</p>
+                    </div>
+                </div>
+            </div>
+            {{#everyOther @index 2}}
+              </div>
+              <div class='row'>
+            {{/everyOther}}
+
+          {{/each}}
+        </div>
+
+    </script>
+
+    <div class='restaurant-detail-container'>
+        <div class="restaurantNav"></div>
+    </div>
+
+    <div class='ratings-container'>
+      <h2>Reviews</h2>
+        <div class='container'>
+          <div class="ratingsNav"></div>
+      </div>
+    </div>
+
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/restaurantDetails.js"></script>
 </body>
 
 </html>

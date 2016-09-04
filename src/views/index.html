@@ -7,63 +7,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/handlebars.min.js"></script>
-    <script src="assets/js/app.js"></script>
+
 </head>
 
 <body>
 
 
     <div class="jumbotron">
-        <div class='container'>
-            <h2 class="page-title text-center" >Restaurant Reviews</h2>
+        <div class='container-fluid'>
+            <h2 class="page-title text-center">Restaurant Reviews</h2>
         </div>
 
-        <form class="navbar-form navbar-left" >
+        <form class="navbar-form navbar-left">
             <fieldset>
-            <legend>Filter By</legend>
-              <div class='form-group'>
-              <label for="cuisine-type" class="sr-only sr-only-focusable">Cuisine Type</label>
-            <select class='form-control' id="cuisine-type">
-              <option value='all'>All Cuisine</option>
-              <option value="fine">Fine Dining</option>
-              <option value="casual">Casual</option>
-              <option value="vegetarian">Vegetarian</option>
-              <option value="seafood">Seafood</option>
-            </select>
-          </div>
-          <div class='form-group'>
-            <label for="maximum-price" class="sr-only sr-only-focusable">Maximum Price</label>
-            <select class='form-control' id="maximum-price">
-              <option value='all'>All Prices</option>
-              <option value="cheap">$</option>
-              <option value="normal">$$ or less</option>
-              <option value="pricey">$$$ or less</option>
-              <option value="expensive">$$$$ or less</option>
-            </select>
-          </div>
-          <div class='form-group'>
-            <label for="minimum-rating" class="sr-only sr-only-focusable">Minimum Rating</label>
-            <select class='form-control' id="minimum-rating">
-              <option value='all'><span class='glyphicon glyphicon-star'></span> +</option>
-              <option value="fiveStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></option>
-              <option value="fourStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
-              <option value="threeStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
-              <option value="twoStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
-            </select>
-          </div>
-        </fieldset>
+                <legend>Filter By</legend>
+                <div class='form-group'>
+                    <label for="cuisine-type" class="sr-only sr-only-focusable">Cuisine Type</label>
+                    <select class='form-control' id="cuisine-type">
+                        <option value='all'>All Cuisine</option>
+                        <option value="fine">Fine Dining</option>
+                        <option value="casual">Casual</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="seafood">Seafood</option>
+                    </select>
+                </div>
+                <div class='form-group'>
+                    <label for="maximum-price" class="sr-only sr-only-focusable">Maximum Price</label>
+                    <select class='form-control' id="maximum-price">
+                        <option value='all'>All Prices</option>
+                        <option value="cheap">$</option>
+                        <option value="normal">$$ or less</option>
+                        <option value="pricey">$$$ or less</option>
+                        <option value="expensive">$$$$ or less</option>
+                    </select>
+                </div>
+                <div class='form-group'>
+                    <label for="minimum-rating" class="sr-only sr-only-focusable">Minimum Rating</label>
+                    <select class='form-control' id="minimum-rating">
+                        <option value='all'><span class='glyphicon glyphicon-star'></span> +</option>
+                        <option value="fiveStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span></option>
+                        <option value="fourStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+                        <option value="threeStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+                        <option value="twoStar"><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span> +</option>
+                    </select>
+                </div>
+            </fieldset>
         </form>
     </div>
 
-    <script id="shoe-template" type="text/x-handlebars-template">​
-        {{#each this}}​
-            <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>​
-        {{/each}}
-        ​</script>
+    <script id="restaurant-card-template" type="text/x-handlebars-template">​
+        <div class='row'>
+            {{#each this}}
+            <div class='col-xs-12 col-md-6'>
+                <div class="card">
+                    <img class="card-img-top" src="{{image}}" alt="{{image-alt}}">
+                    <div class="card-block">
+                        <h4 class="card-title">{{this.name}}</h4>
+                        <p class="card-text">{{this.cuisine}}</p>
+                        <p class='card-text'>{{this.rating}}</p>
+                        <a href="restaurant-view.html?restaurant_id={{this.id}}" class="btn btn-primary">See Details</a>
+                    </div>
+                </div>
+            </div>
+            {{#everyOther @index 2}}
+        </div>
+        <div class='row'>
+            {{/everyOther}} {{/each}}
+        </div>
+    </script>
 
+    <div class='container'>
+        <div class="restaurant-list"></div>
+    </div>
 
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/restaurantList.js"></script>
 </body>
 
 </html>

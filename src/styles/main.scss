@@ -3,3 +3,41 @@
   color:#eef6f6;
 }
 */
+.card{
+  max-width:400px;
+  margin: 15px auto;
+}
+
+.restaurant-detail-container{
+    width:100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color:#642e44;
+    display:inline-block;
+}
+
+.ratings-container{
+  width:100%;
+  padding-top:30px;
+  padding-bottom: 30px;
+  background-color:#527ac2;
+  display:inline-block;
+}
+
+.title-card{
+  max-width:700px;
+  margin:0 auto;
+}
+
+.card-img-top{
+  max-height:100%;
+  max-width:100%;
+}
+
+.star-icon-empty{
+  background-image:url('./images/star-empty.svg');
+}
+
+.star-icon{
+  background-image:url('./images/star.svg');
+}
