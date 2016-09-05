@@ -1,3 +1,29 @@
+/*IndexController.prototype.filterRestaurants = function(filterLocation, filterCuisine, filterRating) {
+
+	var restaurantsEl = document.getElementById('restaurants');
+	restaurantsEl.setAttribute('aria-busy', 'true');
+
+	fetch('./data/restaurants.json')
+	.then(function(response) {
+		return response.json();
+	})
+	.then(function(response) {
+		return Index._filter(response.restaurants, filterLocation, filterCuisine, filterRating);
+	})
+	.then(function(response) {
+
+		restaurantsEl.removeAttribute('aria-busy');
+
+		if ( response.restaurants.length == 0 ) {
+			restaurantsEl.innerHTML = "Sorry, we couldn't find any restaurants matching that criteria";
+			return;
+		}
+
+		restaurantsEl.innerHTML = MyApp.templates.restaurantSnippet(response);
+	});
+};
+*/
+
 
 $(document).ready(function  () {
   fetch('./assets/data/restaurants.json')
@@ -26,5 +52,6 @@ $(document).ready(function  () {
  }).catch(function(error){
    console.log(error);
  });
+
 
    });

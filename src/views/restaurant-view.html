@@ -29,31 +29,31 @@
                 <div class="modal-body">
                     <form class='form'>
                         <div class="form-group">
-                            <label for="yourName">Your Name</label>
-                            <input type="name" class="form-control" id="yourName" placeholder="Name">
+                            <label for="reviewer-name">Your Name</label>
+                            <input type="name" class="form-control" id="reviewer-name" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <fieldset class="rating">
-                                <legend>Rating</legend>
-                                <input type="radio" id="star5" name="rating" value="5" />
+                            <fieldset class='rating review-rating'>
+                                <legend id='review-rating'>Rating <span class='sr-only'>Required</span></legend>
+                                <input type="radio" id="star5" name="rating" value="5" required/>
                                 <label for="star5" title="Rocks!">5 stars</label>
-                                <input type="radio" id="star4" name="rating" value="4" />
+                                <input type="radio" id="star4" name="rating" value="4" required/>
                                 <label for="star4" title="Pretty good">4 stars</label>
-                                <input type="radio" id="star3" name="rating" value="3" />
+                                <input type="radio" id="star3" name="rating" value="3" required/>
                                 <label for="star3" title="Meh">3 stars</label>
-                                <input type="radio" id="star2" name="rating" value="2" />
+                                <input type="radio" id="star2" name="rating" value="2" required/>
                                 <label for="star2" title="Kinda bad">2 stars</label>
-                                <input type="radio" id="star1" name="rating" value="1" />
+                                <input type="radio" id="star1" name="rating" value="1" required/>
                                 <label for="star1" title="Sucks big time">1 star</label>
                             </fieldset>
                         </div>
                         <div class="form-group">
-                            <label for="exampleTextarea">Comments</label>
-                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                            <label for="review-comments">Comments</label>
+                            <textarea class="form-control" id="review-comments" rows="3"></textarea>
                         </div>
 
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" id="submit" class="btn btn-primary pull-right">Submit</button>
+                        <button type="button" id="review-submit" class="btn btn-primary pull-right">Submit</button>
                     </form>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <p class="card-text">{{cuisine}} {{printDollarSigns price}}</p>
                 <p class='card-text'>{{rating}}</p>
                 <button id="leaveReviewButton" class='btn primary' data-toggle="modal" data-target="#review-modal">Leave a Review</div>
-        </div>
+                </div>
         </div>
     </script>
 
@@ -83,7 +83,7 @@
                         <h4 class="card-title review-title text-center">
                         {{this.name}}
                       </h4>
-                        <p class='card-text text-center'>{{printStars this.stars}}</p>
+                        <p class='card-text text-center' aria-description="{{this.stars}} out of 5 stars">{{printStars this.stars}}</p>
                     </div>
                     <div class="card-block">
                         <p class='card-text date-text'>{{this.date}}</p>

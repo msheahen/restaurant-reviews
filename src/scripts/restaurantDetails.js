@@ -1,6 +1,4 @@
-
-$(document).ready(function () {
-
+function initRestaurantDetails(){
   var restaurantID = getParameterByName('restaurant_id');
 
   fetch('./assets/data/restaurants.json')
@@ -32,4 +30,24 @@ $(document).ready(function () {
     }).catch(function(error){
       console.log(error);
     });
-   });
+}
+
+
+function submitReview(){
+
+  var reviewComments = $("#review-comments");
+  var reviewRating = $("#review-rating");
+  var reviewerName = $("reviewer-name");
+  
+
+}
+
+
+$(document).ready(function () {
+
+
+  initRestaurantDetails();
+
+  $("#submit-review").click(submitReview());
+
+});

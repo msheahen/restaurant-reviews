@@ -24,7 +24,7 @@ Handlebars.registerHelper("printStars", function(number){
 });
 
 Handlebars.registerHelper("printDollarSigns", function(number){
-  var starDom = "";
+  var starDom ="";
   for(var i = 0; i < number; i++){
     starDom += "$";
   }
