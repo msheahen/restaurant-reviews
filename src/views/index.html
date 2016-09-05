@@ -62,8 +62,8 @@
                 <div class="card">
                     <img class="card-img-top" src="{{image}}" alt="{{image-alt}}">
                     <div class="card-block">
-                        <h4 class="card-title">{{this.name}}</h4>
-                        <p class="card-text">{{this.cuisine}}</p>
+                        <h4 class="card-title text-center">{{this.name}}</h4>
+                        <p class="card-text">{{this.cuisine}} {{printDollarSigns this.price}}</p>
                         <p class='card-text'>{{this.rating}}</p>
                         <a href="restaurant-view.html?restaurant_id={{this.id}}" class="btn btn-primary">See Details</a>
                     </div>

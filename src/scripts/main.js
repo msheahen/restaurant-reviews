@@ -12,14 +12,21 @@ Handlebars.registerHelper("everyOther", function (index, amount, scope) {
         return scope.fn(this);
 });
 
-
 Handlebars.registerHelper("printStars", function(number){
   var starDom = "";
   for(var i = 0; i < number; i++){
-    starDom += "<span class='glyphicon glyphicon-star'></span>";
+    starDom += "<span class='star-icon'>★</span>";
   }
-  for(i = number; i <= 5; i++){
-    starDom += "<span class='glyphicon glyphicon-star-empty'></span>";
+  for(i = number; i < 5; i++){
+    starDom += "<span class='star-icon'>☆</span>";
+  }
+  return new Handlebars.SafeString(starDom);
+});
+
+Handlebars.registerHelper("printDollarSigns", function(number){
+  var starDom = "";
+  for(var i = 0; i < number; i++){
+    starDom += "$";
   }
   return new Handlebars.SafeString(starDom);
 });

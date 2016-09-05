@@ -35,11 +35,10 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 var myJSfiles = 'src/scripts/*.js';
-var vendorJSfiles = ['src/scripts/vendor/jquery.min.js', 'src/scripts/vendor/bootstrap.min.js'];
+var vendorJSfiles = ['src/scripts/vendor/jquery.min.js', 'src/scripts/vendor/bootstrap.min.js', 'src/scripts/vendor/handlebars-v4.0.5.js'];
 
 gulp.task('js', function() {
 	gulp.src(myJSfiles)
-		.pipe(concat('app.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js'));
 });
@@ -51,13 +50,13 @@ gulp.task('vendorJs', function(){
 		.pipe(gulp.dest('dist/assets/js'));
 });
 
-gulp.task('handlebars', function(){
+/*gulp.task('handlebars', function(){
 	gulp.src('src/scripts/vendor/handlebars-v4.0.5.js')
 		.pipe(concat('handlebars.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js'));
 });
-
+*/
 
 
 
@@ -68,23 +67,12 @@ Sweet, now we need to move our html files into dist and
 gulp.task('copy', function() {
     gulp.src('src/views/*.html')
         .pipe(gulp.dest('dist/'));
-});
-
-var handlebars = require('gulp-handlebars');
-var wrap = require('gulp-wrap');
-var declare = require('gulp-declare');
-var concat = require('gulp-concat');
-
-gulp.task('templates', function () {
-    return gulp.src('src/views/*.hbs')
-      .pipe(handlebars())
-      .pipe(wrap('Handlebars.template(<%= contents %>)'))
-      .pipe(declare({
-          namespace: 'MyApp.templates',
-          noRedeclare: true, // Avoid duplicate declarations
-      }))
-      .pipe(concat('templates.js'))
-      .pipe(gulp.dest('src/scripts/'));
+		gulp.src('src/assets/*.json')
+			.pipe(gulp.dest('dist/assets/data'));
+		gulp.src('src/assets/images/*')
+			.pipe(gulp.dest('dist/assets/images'));
+		gulp.src('src/assets/fonts/*')
+			.pipe(gulp.dest('dist/assets/fonts'));
 });
 
 /*
@@ -108,8 +96,7 @@ gulp.task('watch', function() {
 });
 
 
-
 /*
  gulp serve will get our page up and running!
  */
-gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'vendorJs', 'handlebars', 'copy', 'templates', 'watch']);
+gulp.task('serve', ['connectWithBrowserSync', 'css', 'js', 'vendorJs', 'copy', 'watch']);
