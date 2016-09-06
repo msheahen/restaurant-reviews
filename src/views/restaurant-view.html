@@ -66,12 +66,11 @@
 
 
     <script id="restaurant-details" type="text/x-handlebars-template">​
-        <section class="card title-card center-block">
-            <h3 class='sr-only'>Information</h3>
+        <div class="card title-card center-block">
             <img class="card-img-top" src="{{image}}" alt="{{image_alt}}">
             <div class="card-block">
-                <h4 class="card-title text-center">{{name}}
-                </h4>
+                <h3 class="card-title text-center">{{name}}
+                </h3>
                 <section class='card-text text-center'>
                     <h4 class='sr-only'>
                     Rating
@@ -115,10 +114,6 @@
                             <section class='card-text'><i class='clock-icon' aria-hidden='true'></i>
                                 <h4 class='sr-only'>Opening Hours</h4>
                                 <table>
-                                    <tr class='sr-only'>
-                                        <th>Day</th>
-                                        <th>Hours</th>
-                                    </tr>
                                     {{#each opening_hours}}
                                     <tr class="hours_row">
                                         <td class='day'>{{day}}</td>
@@ -135,10 +130,10 @@
 
                 </div>
 
-                <button id="leaveReviewButton" class='btn btn-primary' data-toggle="modal" data-target="#review-modal">Leave a Review for {{name}}</div>
+                <button id="leaveReviewButton" class='btn btn-primary' data-toggle="modal" data-target="#review-modal">Leave a Review for {{name}}
+                </div>
             </div>
-            </div>
-    </script>
+          </script>
 
 
     <script id="ratings-list" type="text/x-handlebars/template">
@@ -148,17 +143,17 @@
                 <section class="card">
                     <div class='review-masthead'>
                         <h3 class="card-title review-title text-center">
-                        <span class='sr-only'>Review By </span>{{this.name}}
-                      </h3>
+                          <span class='sr-only'>Review By </span>{{this.name}}
+                        </h3>
                         <p class='card-text text-center'>
                             <span class='sr-only'>
-                            {{this.stars}} out of 5 stars
-                        </span>
+                              {{this.stars}} out of 5 stars
+                            </span>
                             <div aria-hidden='true' class='text-center'>{{printStars this.stars}}</div>
                         </p>
                     </div>
                     <div class="card-block">
-                        <p class='card-text date-text'><span class='sr-only'>Date of Review:5</span>{{this.date}}</p>
+                        <p class='card-text date-text'><span class='sr-only'>Date of Review:</span>{{this.date}}</p>
                         <p class="card-text"><span class='sr-only'>Review Contents:</span>{{this.review}}</p>
                     </div>
                 </section>
