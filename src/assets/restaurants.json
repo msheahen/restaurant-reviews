@@ -5,13 +5,13 @@
 			"id": "pablos_bar_grill",
 			"location": {
 				"address_line_1": "12 Boston Neck Rd",
-				"address_line_2": "Narragansett, RI 02882"
+				"area": "Narragansett, RI 02882"
 			},
 			"cuisine": "Casual",
       "price": 2,
       "description": "Pub food and casual atmosphere",
-			"image": "assets/images/vegetarian.jpg",
-			"image_alt": "Chicken Suya and Chips",
+			"image": "assets/images/burger.jpg",
+			"image_alt": "Burger and French Fries",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -51,33 +51,27 @@
 			],
 			"reviews": [
 				{
-					"stars": 5,
-					"name": "Mary Sheahen",
-					"date": "2016-02-03",
-					"review": "We went here on a Sunday to watch the Celtics and have a couple drinks.  We ended up spending hours there since the atmosphere was so relaxed and the deck was so nice."
-				},
-				{
 					"stars": 4,
 					"name": "John Doe",
-					"date": "2016-08-17",
+					"date": "08/17/2016",
 					"review": "Pretty good burgers, great nachos.  Drinks were a little overpriced."
 				},
 				{
 					"stars": 3,
 					"name": "Jane Doe",
-					"date": "2016-03-22",
+					"date": "03/22/2016",
 					"review": "The fries were completely cold when they were brought out.  Server was rude and was hard to get the attention of."
 				},
 				{
 					"stars": 2,
 					"name": "Snoop Dogg",
-					"date": "2015-12-02",
+					"date": "12/02/2015",
 					"review": "Service was horrible!  We waited for about half an hour to get our drinks and another 15 minutes after that just to get our order taken.  Food was good but the wait was so long it didn't really matter."
 				},
 				{
 					"stars": 5,
 					"name": "Dr. Dre.",
-					"date": "2015-11-11",
+					"date": "11/11/2015",
 					"review": "Loved the burgers. Nice deck."
 				}
 			]
@@ -92,8 +86,8 @@
 			},
 			"cuisine": "Seafood",
       "price": 3,
-			"image": "assets/images/vegetarian.jpg",
-			"image_alt": "fish",
+			"image": "assets/images/fish_and_chips.jpg",
+			"image_alt": "fish and chips",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -135,33 +129,27 @@
 				{
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
           "stars": 5,
           "name": "Jane Doe",
-          "date": "2016-09-03",
+          "date": "09/03/2016",
           "review": "Loved it!"
-        },
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				}
+        }
 			]
 		},
 		{
@@ -173,8 +161,8 @@
 			},
 			"cuisine": "Seafood",
       "price": 2,
-		  "image": "assets/images/vegetarian.jpg",
-			"image_alt": "Chicken and Chips, Sweet potato Mash",
+		  "image": "assets/images/lobster.jpg",
+			"image_alt": "Lobster Roll",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -216,31 +204,25 @@
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+				  "date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				}
 			]
@@ -254,8 +236,8 @@
 			},
 			"cuisine": "Fine Dining",
       "price": 4,
-			"image": "assets/images/vegetarian.jpg",
-			"image_alt": "Dim Sum",
+			"image": "assets/images/steak.jpg",
+			"image_alt": "Steak and glass of wine",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -295,33 +277,27 @@
 			],
 			"reviews": [
         {
-					"stars": 5,
+					"stars": 2,
 					"name": "Jane Doe",
 					"date": "2016-09-03",
 					"review": "Loved it!"
 				},
         {
-					"stars": 5,
+					"stars": 4,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
+					"review": "Loved it!"
+				},
+        {
+					"stars": 2,
+					"name": "Jane Doe",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				}
 			]
@@ -331,12 +307,12 @@
 			"id": "main_squeeze",
 			"location": {
 				"address_line_1": "300 Herbert Macaulay Road",
-				"area": "Yaba"
+				"area": "South Kingstown, RI"
 			},
 			"cuisine": "Vegetarian",
       "price": 3,
 			"image": "assets/images/vegetarian.jpg",
-			"image_alt": "vegetables",
+			"image_alt": "Toast with Tomato, Basil, and Mozarella",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -378,46 +354,40 @@
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
+					"review": "Loved it!"
+				},
+        {
+					"stars": 3,
+					"name": "Jane Doe",
+					"date": "09/03/2016",
+					"review": "Loved it!"
+				},
+        {
+					"stars": 2,
+					"name": "Jane Doe",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				},
         {
 					"stars": 5,
 					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
-					"review": "Loved it!"
-				},
-        {
-					"stars": 5,
-					"name": "Jane Doe",
-					"date": "2016-09-03",
+					"date": "09/03/2016",
 					"review": "Loved it!"
 				}
 			]
 		},
 		{
-			"name": "Brickway's Diner",
-			"id": "brickway_diner",
+			"name": "Toasty's Diner",
+			"id": "toasty_diner",
 			"location": {
 				"address_line_1": "22 Kingstown Rd",
 				"area": "Wakefield, RI"
 			},
-			"cuisine": "Continental",
+			"cuisine": "Casual",
       "price": 1,
-			"image": "assets/images/vegetarian.jpg",
-			"image_alt": "Sandwhich and Chips",
+			"image": "assets/images/eggs_and_bacon.jpg",
+			"image_alt": "Eggs and Bacon",
 			"opening_hours": [
 				{
 					"day": "Monday",
@@ -459,31 +429,25 @@
 				{
 					"stars": 1,
 					"name": "Snoop Dogg",
-					"date": "2016-05-03",
+					"date": "03/05/2015",
 					"review": "I would not eat here in the future.  The food was not good."
 				},
 				{
 					"stars": 1,
 					"name": "Dr. Dre.",
-					"date": "2016-04-17",
+					"date": "04/17/2016",
 					"review": "Service was slow, food made my whole party sick. "
 				},
 				{
 					"stars": 2,
 					"name": "John Doe",
-					"date": "2016-03-22",
+					"date": "03/22/2016",
 					"review": "I ordered the breakfast platter and my toast was burnt, eggs were cold, and sausage was not cooked.  It's cheap but save your money."
 				},
 				{
 					"stars": 1,
-					"name": "Jane Doe",
-					"date": "2016-01-02",
-					"review": "Food was Nasty, servers were rude."
-				},
-				{
-					"stars": 1,
 					"name": "Eminem",
-					"date": "2016-02-11",
+					"date": "02/11/2016",
 					"review": "We waited forever and the place was empty.  The brekfast I got was so bad I couldn't even eat it.  Not sure why this place is even open."
 				}
 			]

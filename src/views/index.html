@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restaurant Reviews</title>
+    <title>MunchMore</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -15,35 +15,35 @@
 
     <div class="jumbotron">
         <div class='container-fluid'>
-            <h2 class="page-title text-center">Restaurant Reviews</h2>
+            <h1 class="page-title text-center">MunchMore</h1>
         </div>
 
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" id='filter-restaurants'>
             <fieldset>
                 <legend aria-label="Filter By">Filter By</legend>
                 <div class='form-group'>
                     <label for="cuisine-type" class="sr-only sr-only-focusable">Cuisine Type</label>
                     <select class='form-control' id="cuisine-type">
                         <option value='all'>All Cuisine</option>
-                        <option value="fine">Fine Dining</option>
-                        <option value="casual">Casual</option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="seafood">Seafood</option>
+                        <option value="Fine Dining">Fine Dining</option>
+                        <option value="Casual">Casual</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Seafood">Seafood</option>
                     </select>
                 </div>
                 <div class='form-group'>
                     <label for="maximum-price" class="sr-only sr-only-focusable">Maximum Price</label>
                     <select class='form-control' id="maximum-price">
-                        <option value='all'>All Prices</option>
-                        <option value="cheap">$</option>
-                        <option value="normal">$$ or less</option>
-                        <option value="pricey">$$$ or less</option>
-                        <option value="expensive">$$$$ or less</option>
+                        <option value='5'>All Prices</option>
+                        <option value="1">$</option>
+                        <option value="2">$$ or less</option>
+                        <option value="3">$$$ or less</option>
+                        <option value="4">$$$$ or less</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <fieldset class="rating review-rating" required>
-                        <legend>Minimum Rating</legend>
+                    <fieldset class="rating review-rating">
+                        <legend>Minimum Rating </legend>
                         <input type="radio" id="star5" name="rating" value="5" />
                         <label for="star5" title="Perfect">5 stars</label>
                         <input type="radio" id="star4" name="rating" value="4" />
@@ -52,11 +52,13 @@
                         <label for="star3" title="Average">3 stars</label>
                         <input type="radio" id="star2" name="rating" value="2" />
                         <label for="star2" title="Below Average">2 stars</label>
-                        <input type="radio" id="star1" name="rating" value="1"  checked/>
+                        <input type="radio" id="star1" name="rating" value="1" checked/>
                         <label for="star1" title="Poor">1 star</label>
                     </fieldset>
                 </div>
             </fieldset>
+
+            <button type="submit" id="filter-submit" class="btn btn-primary">Update Results</button>
         </form>
     </div>
 
@@ -65,11 +67,23 @@
             {{#each this}}
             <div class='col-xs-12 col-md-6'>
                 <div class="card" aria-role='list-item'>
-                    <img class="card-img-top" src="{{image}}" alt="{{image-alt}}">
+                    <img class="card-img-top" src="{{image}}" alt="{{image_alt}}" />
                     <div class="card-block">
                         <h4 class="card-title text-center">{{this.name}}</h4>
-                        <p class="card-text" aria-role='article'>{{this.cuisine}} <span class='sr-only'>{{this.price}} out of 4 dollar signs</span><span aria-hidden='true'>{{printDollarSigns this.price}}</span></p>
-                        <p class='card-text' aria-role='article'><span class='sr-only'>{{this.rating}} out of 5 stars</span><span aria-hidden='true'>{{printStars this.rating}}</span></p>
+                        <p class='card-text text-center'><span class='sr-only'>{{this.rating}} out of 5 stars</span><span class='text-center' aria-hidden='true'>{{printStars this.rating}}</span></p>
+                        <p class="card-text"><span class='sr-only'>Price</span>
+                        <span class='dollar-signs' aria-hidden='true'>
+                            {{printDollarSigns price}} -
+                        </span>
+                        <span class='sr-only'>
+                            {{price}} out of 4 dollar signs
+                        </span>
+                      <i class='silverware-icon' aria-hidden='true'></i>
+                      <span class='sr-only'>
+                          Cuisine
+                          </span>
+                          {{cuisine}}</p>
+
                         <a href="restaurant-view.html?restaurant_id={{this.id}}" class="btn btn-primary pull-right">See Details</a>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 body{
-    background-color:#FAEBD7;
+    background-color:#f5f5f5;
+    font-family:sans-serif;
 }
 
 legend{
@@ -7,39 +8,53 @@ legend{
 }
 
 .jumbotron{
-  background-color:#FAEBD7;
+  background-color:#642e44;
+  color:white;
+  margin-bottom:0;
 }
 
 .card{
   max-width:400px;
   margin: 15px auto;
+  box-shadow: 5px 5px 2.5px #888888;
+}
+
+.card-text{
+  margin-top:10px;
 }
 
 .restaurant-detail-container{
     width:100%;
     padding-top: 60px;
     padding-bottom: 60px;
-    background-color:#642e44;
     display:inline-block;
+    background-color:#FAEBD7;
 }
 
 .ratings-container{
   width:100%;
   padding-top:30px;
   padding-bottom: 30px;
-  background-color:#527ac2;
   display:inline-block;
 }
 
 .title-card{
   max-width:700px;
   margin:0 auto;
+
+  .card-img-top{
+    object-position: center;
+    object-fit: cover;
+  }
 }
 
 .card-img-top{
   max-height:100%;
   max-width:100%;
+  object-position: center;
+  object-fit:cover;
 }
+
 
 .star-icon-empty{
   width:30px;
@@ -63,8 +78,9 @@ legend{
 
 .review-masthead{
   width:100%;
-  background-color:#FAEBD7;
   padding:15px 0;
+  background-color:#527ac2;
+  background-color:#BAD0EF;
 }
 
 .date-text{
@@ -126,4 +142,47 @@ legend{
     position:relative;
     top:2px;
     left:2px;
+}
+
+.day{
+  font-weight:bold;
+  padding-right: 15px;
+}
+
+.silverware-icon{
+  width:20px;
+  height:20px;
+  display:inline-block;
+  background-repeat:no-repeat;
+  color:red;
+  background-image:url('../images/cutlery.svg');
+}
+
+.clock-icon{
+  width:20px;
+  height:20px;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-image:url('../images/clock-1.svg');
+}
+
+.location-icon{
+  width:20px;
+  height:20px;
+  display:inline-block;
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-image:url('../images/location.svg');
+}
+
+.dollar-signs{
+  font-size:25px;
+}
+
+.address-line-2{
+  padding-left:25px;
+}
+
+.rating-average{
+  font-size:20px;
 }
