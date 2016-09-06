@@ -11,20 +11,21 @@
 </head>
 
 <body>
-
-    <div class="jumbotron">
-        <div class='container-fluid'>
-            <h1 class="page-title text-center">MunchMore</h1>
+    <header>
+        <div class="jumbotron">
+            <div class='container-fluid'>
+                <h1 class="page-title text-center">MunchMore</h1>
+            </div>
         </div>
-    </div>
-    <div class="modal fade" id="review-modal" role="dialog" aria-labelledby="modal-title" tabindex='-1' aria-describedby="dialog-description" aria-hidden="true">
+    </header>
+    <div class="modal fade" id="review-modal" role="dialog" aria-labelledby="review-modal-label" tabindex='-1' aria-describedby="dialog-description" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title" id="review-modal-label">Add a Review</h4>
+                    <h2 class="modal-title" id="review-modal-label">Add a Review</h2>
                     <p class="sr-only" id="dialog-description">Use the form below to add your own review of this restaurant</p>
 
                 </div>
@@ -63,68 +64,80 @@
     </div>
 
 
+
     <script id="restaurant-details" type="text/x-handlebars-template">​
-        <div class="card title-card center-block">
+        <section class="card title-card center-block">
+            <h3 class='sr-only'>Information</h3>
             <img class="card-img-top" src="{{image}}" alt="{{image_alt}}">
             <div class="card-block">
                 <h4 class="card-title text-center">{{name}}
                 </h4>
                 <section class='card-text text-center'>
-                    <span class='sr-only'>
+                    <h4 class='sr-only'>
                     Rating
-                  </span>
+                  </h4>
                     <div aria-hidden='true'>
                         <span class='rating-average'>{{rating}}</span> {{printStars rating}}
                     </div>
                     <div class='sr-only'>{{rating}} out of 5 stars</div>
                 </section>
-                <section class="card-text">
+                <div class="card-text">
 
                     <div class='container'>
                         <div class='row'>
                             <div class='col-sm-6 col-md-6'>
-                                <span class='sr-only'>Price</span>
-                                <span class='dollar-signs' aria-hidden='true'>
-                                  {{printDollarSigns price}} -
+                                <section>
+                                    <h4 class='sr-only'>Price</h4>
+                                    <span class='dollar-signs' aria-hidden='true'>
+                                  {{printDollarSigns price}}
                               </span>
-                                <span class='sr-only'>
+                                    <span class='sr-only'>
                                   {{price}} out of 4 dollar signs
-                              </span>
-                                <i class='silverware-icon' aria-hidden='true'></i>
-                                <span class='sr-only'>
-                  Cuisine
-                </span> {{cuisine}}
+                                </span>
+                              </section>
+                                <section>
+                                    <h4 class='sr-only'>
+                                  Cuisine
+                                </h4>
+                                    <i class='silverware-icon' aria-hidden='true'></i> {{cuisine}}
+                                </section>
                             </div>
 
-                            <div class='col-sm-6 col-md-6'>
-                                <span class='sr-only'>Address</span>
+                            <section class='col-sm-6 col-md-6'>
+                                <h4 class='sr-only'>Address</h4>
                                 <p><i class='location-icon' aria-hidden='true'></i> {{location.address_line_1}}
                                     <br/><span class='address-line-2'>{{location.area}}</span></p>
-                            </div>
+                            </section>
                         </div>
+
+                        <div class='row'>
+                          <div class='col-sm-12 col-md-12'>
+                            <section class='card-text'><i class='clock-icon' aria-hidden='true'></i>
+                                <h4 class='sr-only'>Opening Hours</h4>
+                                <table>
+                                    <tr class='sr-only'>
+                                        <th>Day</th>
+                                        <th>Hours</th>
+                                    </tr>
+                                    {{#each opening_hours}}
+                                    <tr class="hours_row">
+                                        <td class='day'>{{day}}</td>
+                                        <td class='time'> {{formatTime start}} to {{formatTime end}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </table>
+                            </section>
+                          </div>
+                        </div>
+
                     </div>
-                </section>
-
-                <section class='card-text'><i class='clock-icon' aria-hidden='true'></i>
-                    <span class='sr-only'>Opening Hours</span>
-                    <table>
-                        <tr class='sr-only'>
-                            <th>Day</th>
-                            <th>Hours</th>
-                        </tr>
-                        {{#each opening_hours}}
-                        <tr class="hours_row">
-                            <td class='day'>{{day}}</td>
-                            <td class='time'> {{formatTime start}} to {{formatTime end}}</td>
-                        </tr>
-                        {{/each}}
-                    </table>
-                </section>
 
 
-                <button id="leaveReviewButton" class='btn btn-primary pull-right' data-toggle="modal" data-target="#review-modal">Leave a Review</div>
-        </div>
-        </div>
+                </div>
+
+                <button id="leaveReviewButton" class='btn btn-primary' data-toggle="modal" data-target="#review-modal">Leave a Review for {{name}}</div>
+            </div>
+            </div>
     </script>
 
 
@@ -132,12 +145,12 @@
         <div class='row'>
             {{#each this}}
             <div class='col-xs-12 col-md-6'>
-                <div class="card">
+                <section class="card">
                     <div class='review-masthead'>
-                        <h4 class="card-title review-title text-center">
-                        {{this.name}}
-                      </h4>
-                        <p class='card-text text-center' aria-description="{{this.stars}} out of 5 stars">
+                        <h3 class="card-title review-title text-center">
+                        <span class='sr-only'>Review By </span>{{this.name}}
+                      </h3>
+                        <p class='card-text text-center'>
                             <span class='sr-only'>
                             {{this.stars}} out of 5 stars
                         </span>
@@ -145,10 +158,10 @@
                         </p>
                     </div>
                     <div class="card-block">
-                        <p class='card-text date-text'><span class='sr-only'>Date of Review</span>{{this.date}}</p>
-                        <p class="card-text"><span class='sr-only'>review contents</span>{{this.review}}</p>
+                        <p class='card-text date-text'><span class='sr-only'>Date of Review:5</span>{{this.date}}</p>
+                        <p class="card-text"><span class='sr-only'>Review Contents:</span>{{this.review}}</p>
                     </div>
-                </div>
+                </section>
             </div>
             {{#everyOther @index 2}}
         </div>
@@ -158,20 +171,24 @@
 
     </script>
 
-    <div class='restaurant-detail-container'>
-        <div class="restaurantNav"></div>
-    </div>
+    <main>
+        <section class='restaurant-detail-container'>
+            <h2 class='page-title text-center'>Restaurant Details</h2>
+            <div class="restaurantNav"></div>
+        </section>
 
-    <div class='ratings-container'>
-        <h2 class='page-title text-center'>Reviews</h2>
-        <div class='container'>
-            <div class="ratingsNav"></div>
-        </div>
-    </div>
+        <section class='ratings-container'>
+            <h2 class='page-title text-center'>Reviews</h2>
+            <div class='container'>
+                <div class="ratingsNav"></div>
+            </div>
+        </section>
+    </main>
+
 
     <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/restaurantDetails.js"></script>
+    <script src="assets/js/app.js"></script>
+
 </body>
 
 </html>

@@ -39,6 +39,7 @@ var vendorJSfiles = ['src/scripts/vendor/jquery.min.js', 'src/scripts/vendor/boo
 
 gulp.task('js', function() {
 	gulp.src(myJSfiles)
+		.pipe(concat('app.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('dist/assets/js'));
 });

@@ -19,7 +19,7 @@ function initRestaurantDetails() {
             var restaurant = response.restaurants.filter(function(entry) {
                 return entry.id === restaurantID;
             });
-            console.log(restaurant);
+        ;
             var myRestaurant = restaurant[0];
             var stars = 0;
             myRestaurant.reviews.forEach(function(review) {
@@ -59,7 +59,7 @@ function printStars(number) {
 
 $(document).ready(function() {
 
-
+  if(path == '/restaurant-view.html'){
     initRestaurantDetails();
 
     /* listener for submitting new review form.
@@ -77,7 +77,7 @@ $(document).ready(function() {
         } else {
             var today = new Date();
 
-            var newReview = '<div class="row"><div class="col-xs-12 col-md-6"><div class="card"><div class="review-masthead"><h4 class="card-title review-title text-center">' + reviewerName + '</h4><p class="card-text text-center" aria-description="' + reviewStars + ' out of 5 stars">' + printStars(reviewStars) + '</p></div><div class="card-block"><p class="card-text date-text">' + today.toLocaleDateString() + '</p><p class="card-text">' + reviewComments + '</p></div></div></div></div>';
+            var newReview = '<div class="row"><div class="col-xs-12 col-md-6"><div class="card"><div class="review-masthead"><h4 class="card-title review-title text-center">' + reviewerName + '</h4><p class="card-text text-center">' + printStars(reviewStars) + '</p></div><div class="card-block"><p class="card-text date-text">' + today.toLocaleDateString() + '</p><p class="card-text">' + reviewComments + '</p></div></div></div></div>';
 
             $(".ratingsNav").append(newReview);
 
@@ -90,5 +90,7 @@ $(document).ready(function() {
         $("#review-modal").removeAttr('aria-hidden');
         $('#reviewer-name').focus();
     });
+
+  }
 
 });

@@ -13,7 +13,7 @@
 <body>
 
 
-    <div class="jumbotron">
+    <header class="jumbotron">
         <div class='container-fluid'>
             <h1 class="page-title text-center">MunchMore</h1>
         </div>
@@ -58,18 +58,18 @@
                 </div>
             </fieldset>
 
-            <button type="submit" id="filter-submit" class="btn btn-primary">Update Results</button>
+            <button type="submit" id="filter-submit" class="btn">Update Results</button>
         </form>
-    </div>
+    </header>
 
     <script id="restaurant-card-template" type="text/x-handlebars-template">​
         <div class='row'>
             {{#each this}}
             <div class='col-xs-12 col-md-6'>
-                <div class="card" aria-role='list-item'>
+                <section class="card"><h3 class='sr-only'>{{this.name}}</h3>
                     <img class="card-img-top" src="{{image}}" alt="{{image_alt}}" />
                     <div class="card-block">
-                        <h4 class="card-title text-center">{{this.name}}</h4>
+                        <h3 class="card-title text-center" aria-hidden='true'>{{this.name}}</h3>
                         <p class='card-text text-center'><span class='sr-only'>{{this.rating}} out of 5 stars</span><span class='text-center' aria-hidden='true'>{{printStars this.rating}}</span></p>
                         <p class="card-text"><span class='sr-only'>Price</span>
                             <span class='dollar-signs' aria-hidden='true'>
@@ -84,9 +84,10 @@
                           </span> {{cuisine}}
                         </p>
 
-                        <a href="restaurant-view.html?restaurant_id={{this.id}}" class="btn btn-primary pull-right">See Details</a>
+                        <a href="restaurant-view.html?restaurant_id={{this.id}}" class="btn btn-primary pull-right">Open Details<span class='sr-only'> about {{this.name}}</span></a>
                     </div>
-                </div>
+
+                </section>
             </div>
             {{#everyOther @index 2}}
         </div>
@@ -94,14 +95,19 @@
             {{/everyOther}} {{/each}}
         </div>
     </script>
-
+  <main>
+    <section style='margin-top:20px;'>
+    <h2 class='page-title text-center'>Restaurants</h2>
     <div class='container'>
-        <section class="restaurant-list" aria-description="List of Restaurants" aria-role='list'></section>
+        <div class="restaurant-list"></div>
     </div>
+    </section>
+  </main>
+
 
     <script src="assets/js/vendor.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/restaurantList.js"></script>
+    <script src="assets/js/app.js"></script>
+
 </body>
 
 </html>

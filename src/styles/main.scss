@@ -1,188 +1,186 @@
-body{
-    background-color:#f5f5f5;
-    font-family:sans-serif;
+body {
+    background-color: #f5f5f5;
+    font-family: sans-serif;
 }
-
-legend{
-  font-size:16px;
+legend {
+    font-size: 16px;
 }
-
-.jumbotron{
-  background-color:#642e44;
-  color:white;
-  margin-bottom:0;
+.jumbotron {
+    background-color:#538ad7;
+    color: black;
+    margin-bottom: 0;
 }
-
-.card{
-  max-width:400px;
-  margin: 15px auto;
-  box-shadow: 5px 5px 2.5px #888888;
+.card {
+    max-width: 400px;
+    margin: 15px auto;
+    box-shadow: 5px 5px 2.5px #888888;
 }
-
-.card-text{
-  margin-top:10px;
+.card-text {
+    margin-top: 10px;
 }
-
-.restaurant-detail-container{
-    width:100%;
+.restaurant-detail-container {
+    width: 100%;
     padding-top: 60px;
     padding-bottom: 60px;
-    display:inline-block;
-    background-color:#FAEBD7;
+    display: inline-block;
+    background-color: #FAEBD7;
 }
-
-.ratings-container{
-  width:100%;
-  padding-top:30px;
-  padding-bottom: 30px;
-  display:inline-block;
+.ratings-container {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: inline-block;
 }
-
-.title-card{
-  max-width:700px;
-  margin:0 auto;
-
-  .card-img-top{
+.title-card {
+    max-width: 700px;
+    margin: 0 auto;
+    .card-img-top {
+        object-position: center;
+        object-fit: cover;
+    }
+}
+.card-img-top {
+    max-height: 100%;
+    max-width: 100%;
     object-position: center;
     object-fit: cover;
-  }
 }
-
-.card-img-top{
-  max-height:100%;
-  max-width:100%;
-  object-position: center;
-  object-fit:cover;
+.text-center {
+    text-align: center;
 }
-
-
-.star-icon-empty{
-  width:30px;
-  height:30px;
-  display:inline-block;
-  //background-repeat:no-repeat;
-  //background-image:url('../images/star-empty.svg');
+.review-masthead {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #BAD0EF;
 }
-
-.star-icon{
-  width:30px;
-  height:30px;
-  display:inline-block;
-  //background-repeat:no-repeat;
-  //background-image:url('../images/star.svg');
+.date-text {
+    font-size: 11px;
 }
-
-.text-center{
-  text-align:center;
-}
-
-.review-masthead{
-  width:100%;
-  padding:15px 0;
-  background-color:#527ac2;
-  background-color:#BAD0EF;
-}
-
-.date-text{
-  font-size:11px;
-}
-
 .rating {
-    display:inline-block;
-    margin:auto;
+    display: inline-block;
+    margin: auto;
 }
+
 
 /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t
    follow these rules. Every browser that supports :checked also supports :not(), so
    it doesn’t make the test unnecessarily selective */
 .rating:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
-    clip:rect(0,0,0,0);
+    position: absolute;
+    top: -9999px;
+    clip: rect(0,0,0,0);
 }
-
 .rating:not(:checked) > label {
-    float:right;
-    width:1em;
-    padding:0 .1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    line-height:1.2;
-    color:#ddd;
-    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+    float: right;
+    width: 1em;
+    padding: 0 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 200%;
+    line-height: 1.2;
 }
 
-.rating:not(:checked) > label:before {
-    content: '★ ';
+#filter-restaurants {
+    .rating:not(:checked) > label {
+        color: #ffffff;
+    }
+}
+#new-review {
+    .rating:not(:checked) > label {
+        color: #939393;
+    }
 }
 
-.rating > input:checked ~ label {
-    color: #f70;
-    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+    .rating:not(:checked) > label:before {
+        content: '★ ';
+    }
+
+#filter-restaurants {
+    .rating > input:checked ~ label {
+        color: #000000;
+    }
+}
+#filter-restaurants {
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #000000;
+    }
 }
 
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: gold;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+#new-review {
+    .rating > input:checked ~ label {
+        color: #990033;
+    }
 }
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #ea0;
-    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+#new-review {
+    .rating:not(:checked) > label:hover,
+    .rating:not(:checked) > label:hover ~ label {
+        color: #990033;
+    }
 }
-
+#filter-restaurants {
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #000000;
+    }
+}
+#new-review {
+    .rating > input:checked + label:hover,
+    .rating > input:checked + label:hover ~ label,
+    .rating > input:checked ~ label:hover,
+    .rating > input:checked ~ label:hover ~ label,
+    .rating > label:hover ~ input:checked ~ label {
+        color: #990033;
+    }
+}
 .rating > label:active {
-    position:relative;
-    top:2px;
-    left:2px;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+.day {
+    font-weight: bold;
+    padding-right: 15px;
+}
+.silverware-icon {
+    width: 16px;
+    height: 16px;
+    padding-top:14px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    color: red;
+    background-image: url('../images/cutlery.svg');
+}
+.clock-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url('../images/clock-1.svg');
+}
+.location-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('../images/location.svg');
+}
+.dollar-signs {
+    font-size: 25px;
+}
+.address-line-2 {
+    padding-left: 25px;
+}
+.rating-average {
+    font-size: 20px;
 }
 
-.day{
-  font-weight:bold;
-  padding-right: 15px;
-}
-
-.silverware-icon{
-  width:20px;
-  height:20px;
-  display:inline-block;
-  background-repeat:no-repeat;
-  color:red;
-  background-image:url('../images/cutlery.svg');
-}
-
-.clock-icon{
-  width:20px;
-  height:20px;
-  display:inline-block;
-  background-repeat:no-repeat;
-  background-image:url('../images/clock-1.svg');
-}
-
-.location-icon{
-  width:20px;
-  height:20px;
-  display:inline-block;
-  background-repeat:no-repeat;
-  background-size:contain;
-  background-image:url('../images/location.svg');
-}
-
-.dollar-signs{
-  font-size:25px;
-}
-
-.address-line-2{
-  padding-left:25px;
-}
-
-.rating-average{
-  font-size:20px;
+#leaveReviewButton{
+  float:right;
+  margin-top:12px;
 }

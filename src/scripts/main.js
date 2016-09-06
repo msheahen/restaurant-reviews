@@ -4,6 +4,8 @@ Written by: Mary Sheahen
 9/5/2016
 
 **/
+var path = window.location.pathname;
+var page = path.split("/").pop();
 
 
 /* helper to print something every nth time*/

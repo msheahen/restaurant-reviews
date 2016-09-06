@@ -7,14 +7,16 @@ Written by: Mary Sheahen
 
 $(document).ready(function() {
 
+  if(path == '/'){
     /* initialize our page with data from restaurants file, and build our template*/
     fetch('./assets/data/restaurants.json')
         .then(function(response) {
             return response.json();
         }).catch(function(error) {
-            return error;
+            console.log(error);
+
         }).then(function(restaurantData) {
-            console.log(restaurantData);
+
             restaurantData.restaurants.forEach(function(restaurant) {
                 var stars = 0;
                 restaurant.reviews.forEach(function(review) {
@@ -45,7 +47,7 @@ $(document).ready(function() {
             .then(function(response) {
                 return response.json();
             }).catch(function(error) {
-                return error;
+                console.log(error);
             }).then(function(restaurantData) {
 
                 restaurantData.restaurants.forEach(function(restaurant) {
@@ -93,6 +95,8 @@ $(document).ready(function() {
             });
 
     });
+
+  }
 
 
 });
