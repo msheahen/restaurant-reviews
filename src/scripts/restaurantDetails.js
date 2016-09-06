@@ -19,7 +19,6 @@ function initRestaurantDetails() {
             var restaurant = response.restaurants.filter(function(entry) {
                 return entry.id === restaurantID;
             });
-        ;
             var myRestaurant = restaurant[0];
             var stars = 0;
             myRestaurant.reviews.forEach(function(review) {
