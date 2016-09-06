@@ -1,3 +1,10 @@
+/**
+Main javascript functions for Restaurant Reviews Project
+Written by: Mary Sheahen
+9/5/2016
+
+**/
+
 $(document).ready(function() {
 
     /* initialize our page with data from restaurants file, and build our template*/
@@ -53,34 +60,34 @@ $(document).ready(function() {
                 var rating = $('input[name="rating"]:checked').val();
                 var cuisine = $("#cuisine-type").val();
 
-                if(cuisine == 'all'){
-                  return restaurantData.restaurants.filter(function(el) {
-                      return el.price <= price &&
-                          el.rating >= rating;
-                        });
-               }else{
-                return restaurantData.restaurants.filter(function(el) {
-                    return el.price <= price &&
-                        el.rating >= rating &&
-                        el.cuisine == cuisine;
-                });
-              }
+                if (cuisine == 'all') {
+                    return restaurantData.restaurants.filter(function(el) {
+                        return el.price <= price &&
+                            el.rating >= rating;
+                    });
+                } else {
+                    return restaurantData.restaurants.filter(function(el) {
+                        return el.price <= price &&
+                            el.rating >= rating &&
+                            el.cuisine == cuisine;
+                    });
+                }
             }).catch(function(error) {
                 console.log(error);
             }).then(function(filteredRestaurantData) {
                 $(".restaurant-list").html("");
 
                 // Show the user an error if there's no results for their query
-                if(filteredRestaurantData.length === 0){
-                  $(".restaurant-list").html('<div class="alert alert-danger">There are no restaurants that meet that criteria.  Please try again.</div>');
-                }else{
+                if (filteredRestaurantData.length === 0) {
+                    $(".restaurant-list").html('<div class="alert alert-danger">There are no restaurants that meet that criteria.  Please try again.</div>');
+                } else {
 
-                  //rebuild our list!
-                  var theTemplateScript = $("#restaurant-card-template").html();
-                  var theTemplate = Handlebars.compile(theTemplateScript);
-                  $(".restaurant-list").append(theTemplate(filteredRestaurantData));
+                    //rebuild our list!
+                    var theTemplateScript = $("#restaurant-card-template").html();
+                    var theTemplate = Handlebars.compile(theTemplateScript);
+                    $(".restaurant-list").append(theTemplate(filteredRestaurantData));
 
-              }
+                }
             }).catch(function(error) {
                 console.log(error);
             });

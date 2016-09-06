@@ -21,10 +21,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                    <h4 class="modal-title" id="review-modal-label">Add a Review</h4><p class="sr-only" id="dialog-description">Use the form below to add your own review of this restaurant</p>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="review-modal-label">Add a Review</h4>
+                    <p class="sr-only" id="dialog-description">Use the form below to add your own review of this restaurant</p>
 
                 </div>
                 <div class="modal-body">
@@ -82,21 +83,21 @@
                     <div class='container'>
                         <div class='row'>
                             <div class='col-sm-6 col-md-6'>
-                              <span class='sr-only'>Price</span>
-                              <span class='dollar-signs' aria-hidden='true'>
+                                <span class='sr-only'>Price</span>
+                                <span class='dollar-signs' aria-hidden='true'>
                                   {{printDollarSigns price}} -
                               </span>
-                              <span class='sr-only'>
+                                <span class='sr-only'>
                                   {{price}} out of 4 dollar signs
                               </span>
-                            <i class='silverware-icon' aria-hidden='true'></i>
-                            <span class='sr-only'>
+                                <i class='silverware-icon' aria-hidden='true'></i>
+                                <span class='sr-only'>
                   Cuisine
                 </span> {{cuisine}}
                             </div>
 
                             <div class='col-sm-6 col-md-6'>
-                              <span class='sr-only'>Address</span>
+                                <span class='sr-only'>Address</span>
                                 <p><i class='location-icon' aria-hidden='true'></i> {{location.address_line_1}}
                                     <br/><span class='address-line-2'>{{location.area}}</span></p>
                             </div>
@@ -137,11 +138,11 @@
                         {{this.name}}
                       </h4>
                         <p class='card-text text-center' aria-description="{{this.stars}} out of 5 stars">
-                          <span class='sr-only'>
+                            <span class='sr-only'>
                             {{this.stars}} out of 5 stars
                         </span>
-                        <div aria-hidden='true' class='text-center'>{{printStars this.stars}}</div>
-                      </p>
+                            <div aria-hidden='true' class='text-center'>{{printStars this.stars}}</div>
+                        </p>
                     </div>
                     <div class="card-block">
                         <p class='card-text date-text'><span class='sr-only'>Date of Review</span>{{this.date}}</p>
