@@ -1,6 +1,6 @@
-# restaurant-reviews
+# MunchMore
 
-Accessible project that allows users to rate and review local restaurants.  Also shows some basic information about the  restaurants.  
+MunchMore is intended to be an accessible project that allows users to rate and review local restaurants.  Also shows some basic information about the restaurants.  
 
 # Installing
 Dependencies:
@@ -21,3 +21,13 @@ npm install
 ```sh
 gulp serve
 ```
+
+Now you can visit your site at [localhost:3000](localhost:3000)
+
+# Resources used:
+
+* gulp
+* npm
+* Bootstrap 4
+* Handlebars.js
+* jQuery
