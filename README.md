@@ -18,16 +18,23 @@ npm install
 ```
 
 # Running
+
 ```sh
 gulp serve
 ```
 
-Now you can visit your site at [localhost:3000](localhost:3000)
+You should now have the app server at [localhost:3000](http://localhost:3000)
 
-# Resources used:
+You can also view the current version of this app at [my hosted github page](https://msheahen.github.io/mtba-transportation-app/)
 
-* gulp
-* npm
-* Bootstrap 4
-* Handlebars.js
+# Dependencies used:
+* Bootstrap
 * jQuery
+* Handlebars.js
+* gulp
+
+#Possible Future Improvements:
+
+* Implement partially filled stars
+* color coding for rating number (dark green for 5, red for 1, and variations inbetween)
+* Could be implemented with a db back end instead of JSON
