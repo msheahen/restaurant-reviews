@@ -5,7 +5,7 @@
 			"id": "pablos_bar_grill",
 			"location": {
 				"address_line_1": "12 Boston Neck Rd",
-				"area": "Narragansett, RI 02882"
+				"address_line_2": "Narragansett, RI 02882"
 			},
 			"cuisine": "Casual",
       "price": 2,
@@ -82,7 +82,7 @@
 			"id": "antoine",
 			"location": {
 				"address_line_1": "12 Ocean Rd",
-				"area": "Narragansett"
+				"address_line_2": "Narragansett"
 			},
 			"cuisine": "Seafood",
       "price": 3,
@@ -157,7 +157,7 @@
 			"id": "monohan",
 			"location": {
 				"address_line_1": "12 Narragansett Ave",
-				"area": "Gallilee, RI"
+				"address_line_2": "Gallilee, RI"
 			},
 			"cuisine": "Seafood",
       "price": 2,
@@ -232,7 +232,7 @@
 			"id": "southern_sun",
 			"location": {
 				"address_line_1": "1 Atlantic Way",
-				"area": "North Kingstown, RI 02881"
+				"address_line_2": "North Kingstown, RI 02881"
 			},
 			"cuisine": "Fine Dining",
       "price": 4,
@@ -307,7 +307,7 @@
 			"id": "main_squeeze",
 			"location": {
 				"address_line_1": "300 Herbert Macaulay Road",
-				"area": "South Kingstown, RI"
+				"address_line_2": "South Kingstown, RI"
 			},
 			"cuisine": "Vegetarian",
       "price": 3,
@@ -382,7 +382,7 @@
 			"id": "toasty_diner",
 			"location": {
 				"address_line_1": "22 Kingstown Rd",
-				"area": "Wakefield, RI"
+				"address_line_2": "Wakefield, RI"
 			},
 			"cuisine": "Casual",
       "price": 1,
